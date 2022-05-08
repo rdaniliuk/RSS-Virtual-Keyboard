@@ -144,9 +144,11 @@ button:hover {
 }
 
 .active {
+  height: 37px;
   border-color: #7fcfbd;
   background-color: #7fcfbd;
   color: black;
+  transition: 0.2s;
 }
 textarea {
   width: 500px;
