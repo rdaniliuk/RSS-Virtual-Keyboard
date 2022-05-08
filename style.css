@@ -97,7 +97,7 @@ button:hover {
   cursor: pointer;
 }
 .buttonSpace {
-  width: 235px;
+  width: 280px;
   height: 40px;
   background-color: #72a595;
   border-color: #72a595;
@@ -106,7 +106,19 @@ button:hover {
   padding: 0px 0px 13px 0px;
 }
 
+.buttonLike{
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  margin: 0px 0px 0px 40px;
+  border-radius: 50px;
+}
+.buttonLike.active{
+background-color: #ed4956;
+}
+
 .buttonSpecial {
+  text-transform: capitalize;
   width: 80px;
   height: 40px;
   background-color: #72a595;
@@ -125,6 +137,7 @@ button:hover {
   transition: 0.3s;
 }
 .buttonSpecialTwo {
+  text-transform: capitalize;
   width: 60px;
   height: 40px;
   background-color: #72a595;
@@ -134,6 +147,7 @@ button:hover {
   transition: 0.3s;
 }
 .buttonEnterAndDelete {
+  text-transform: capitalize;
   width: 145px;
   height: 40px;
   background-color: #72a595;

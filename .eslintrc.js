@@ -11,7 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'linebreak-style':["error", "unix"],
-    'quotes':["error", "single"],
+    'linebreak-style': ['error', 'unix'],
+    quotes: ['error', 'single'],
   },
 };

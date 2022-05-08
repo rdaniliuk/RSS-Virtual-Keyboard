@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-fallthrough */
 const keyboardLayout = {
   en: [
     [
@@ -15,13 +17,13 @@ const keyboardLayout = {
       { initial: '-', shift: '_' },
       { initial: '=', shift: '+' },
       {
-        initial: 'Backspace',
+        initial: 'backspace',
         action: 'BACKSPACE',
         className: 'buttonEnterAndDelete',
       },
     ],
     [
-      { initial: 'Tab', action: 'TAB', className: 'buttonSpecialTwo' },
+      { initial: 'tab', action: 'TAB', className: 'buttonSpecialTwo' },
       { initial: 'q' },
       { initial: 'w' },
       { initial: 'e' },
@@ -35,10 +37,14 @@ const keyboardLayout = {
       { initial: '[', shift: '{' },
       { initial: ']', shift: '}' },
       { initial: '\\', shift: '/' },
-      { initial: 'Del', action: 'DELETE', className: 'buttonSpecial' },
+      {
+        initial: 'del', action: 'DELETE', className: 'buttonSpecial', id: 'delete',
+      },
     ],
     [
-      { initial: 'CapsLk', action: 'CAPS', className: 'buttonSpecial' },
+      {
+        initial: 'capsLk', action: 'CAPS', className: 'buttonSpecial', id: 'capslock',
+      },
       { initial: 'a' },
       { initial: 's' },
       { initial: 'd' },
@@ -50,7 +56,7 @@ const keyboardLayout = {
       { initial: 'l' },
       { initial: ';', shift: ':' },
       { initial: '\'', shift: '"' },
-      { initial: 'Enter', action: 'ENTER', className: 'buttonEnterAndDelete' },
+      { initial: 'enter', action: 'ENTER', className: 'buttonEnterAndDelete' },
     ],
     [
       { initial: 'Shift', action: 'SHIFT', className: 'buttonSpecial' },
@@ -64,29 +70,36 @@ const keyboardLayout = {
       { initial: ',', shift: '<' },
       { initial: '.', shift: '>' },
       { initial: '/', shift: '?' },
-      { initial: 'Shift', action: 'SHIFT', className: 'buttonSpecial' },
-      { initial: '↑', action: 'UP', className: 'buttonTurns' },
+      {
+        initial: '↑', action: 'UP', className: 'buttonTurns', id: 'arrowup',
+      },
+      { initial: 'Like ♥', action: 'UP', className: 'buttonLike' },
     ],
     [
-      { initial: 'Ctrl', action: 'CTRL', className: 'buttonSpecialTwo' },
-      { initial: 'Win', action: 'WIN', className: 'buttonSpecialTwo' },
       {
-        initial: 'Alt',
+        initial: 'ctrl', action: 'CTRL', className: 'buttonSpecialTwo', id: 'control',
+      },
+      {
+        initial: 'win', action: 'WIN', className: 'buttonSpecialTwo', id: 'meta',
+      },
+      {
+        initial: 'alt',
         action: 'ALT',
         className: 'buttonSpecialTwo',
-        id: 'key-left-alt',
+        id: 'alt',
       },
-      { initial: '', action: 'SPACE', className: 'buttonSpace' },
       {
-        initial: 'Alt',
-        action: 'ALT',
-        className: 'buttonSpecialTwo',
-        id: 'key-right-alt',
+        initial: '', action: 'SPACE', className: 'buttonSpace', id: ' ',
       },
-      { initial: 'Ctrl', action: 'CTRL', className: 'buttonSpecialTwo' },
-      { initial: '←', action: 'LEFT', className: 'buttonTurns' },
-      { initial: '↓', action: 'DOWN', className: 'buttonTurns' },
-      { initial: '→', action: 'RIGHT', className: 'buttonTurns' },
+      {
+        initial: '←', action: 'LEFT', className: 'buttonTurns', id: 'arrowleft',
+      },
+      {
+        initial: '↓', action: 'DOWN', className: 'buttonTurns', id: 'arrowdown',
+      },
+      {
+        initial: '→', action: 'RIGHT', className: 'buttonTurns', id: 'arrowright',
+      },
     ],
   ],
   ru: [
@@ -105,13 +118,13 @@ const keyboardLayout = {
       { initial: '-', shift: '_' },
       { initial: '=', shift: '+' },
       {
-        initial: 'Backspace',
+        initial: 'backspace',
         action: 'BACKSPACE',
         className: 'buttonEnterAndDelete',
       },
     ],
     [
-      { initial: 'Tab', action: 'TAB', className: 'buttonSpecialTwo' },
+      { initial: 'tab', action: 'TAB', className: 'buttonSpecialTwo' },
       { initial: 'й' },
       { initial: 'ц' },
       { initial: 'у' },
@@ -125,10 +138,14 @@ const keyboardLayout = {
       { initial: 'х' },
       { initial: 'ъ' },
       { initial: '\\', shift: '/' },
-      { initial: 'Del', action: 'DELETE', className: 'buttonSpecial' },
+      {
+        initial: 'del', action: 'DELETE', className: 'buttonSpecial', id: 'delete',
+      },
     ],
     [
-      { initial: 'Caps', action: 'CAPS', className: 'buttonSpecial' },
+      {
+        initial: 'capsLk', action: 'CAPS', className: 'buttonSpecial', id: 'capslock',
+      },
       { initial: 'ф' },
       { initial: 'ы' },
       { initial: 'в' },
@@ -140,10 +157,10 @@ const keyboardLayout = {
       { initial: 'д' },
       { initial: 'ж' },
       { initial: 'э' },
-      { initial: 'Enter', action: 'ENTER', className: 'buttonEnterAndDelete' },
+      { initial: 'enter', action: 'ENTER', className: 'buttonEnterAndDelete' },
     ],
     [
-      { initial: 'Shift', action: 'SHIFT', className: 'buttonSpecial' },
+      { initial: 'shift', action: 'SHIFT', className: 'buttonSpecial' },
       { initial: 'я' },
       { initial: 'ч' },
       { initial: 'с' },
@@ -154,33 +171,38 @@ const keyboardLayout = {
       { initial: 'б' },
       { initial: 'ю' },
       { initial: '.', shift: ',' },
-      { initial: 'Shift', action: 'SHIFT', className: 'buttonSpecial' },
       { initial: '↑', action: 'UP', className: 'buttonTurns' },
+      { initial: 'Лайк ♥', action: 'UP', className: 'buttonLike' },
     ],
     [
-      { initial: 'Ctrl', action: 'CTRL', className: 'buttonSpecialTwo' },
-      { initial: 'Win', action: 'WIN', className: 'buttonSpecialTwo' },
       {
-        initial: 'Alt',
+        initial: 'ctrl', action: 'CTRL', className: 'buttonSpecialTwo', id: 'control',
+      },
+      {
+        initial: 'win', action: 'WIN', className: 'buttonSpecialTwo', id: 'meta',
+      },
+      {
+        initial: 'alt',
         action: 'ALT',
         className: 'buttonSpecialTwo',
-        id: 'key-left-alt',
+        id: 'alt',
       },
-      { initial: '', action: 'SPACE', className: 'buttonSpace' },
       {
-        initial: 'Alt',
-        action: 'ALT',
-        className: 'buttonSpecialTwo',
-        id: 'key-right-alt',
+        initial: '', action: 'SPACE', className: 'buttonSpace', id: ' ',
       },
-      { initial: 'Ctrl', action: 'CTRL', className: 'buttonSpecialTwo' },
-      { initial: '←', action: 'LEFT', className: 'buttonTurns' },
-      { initial: '↓', action: 'DOWN', className: 'buttonTurns' },
-      { initial: '→', action: 'RIGHT', className: 'buttonTurns' },
+      {
+        initial: '←', action: 'LEFT', className: 'buttonTurns', id: 'arrowleft',
+      },
+      {
+        initial: '↓', action: 'DOWN', className: 'buttonTurns', id: 'arrowdown',
+      },
+      {
+        initial: '→', action: 'RIGHT', className: 'buttonTurns', id: 'arrowright',
+      },
     ],
   ],
 };
-let lang = 'en';
+let lang = localStorage.getItem('lang') || 'en';
 
 function textAreaRender() {
   const textArea = document.createElement('textarea');
@@ -190,7 +212,12 @@ function textAreaRender() {
   textArea.cols = 50;
   return textArea;
 }
-
+function instructionRender() {
+  const optionDiv = document.createElement('div');
+  document.body.prepend(optionDiv);
+  optionDiv.innerHTML = 'Клавиатура создана в операц ионной системе Windows \n Для переключения языка комбинация: Ctrl + Alt';
+  return optionDiv;
+}
 function keyboardRender() {
   const keyboardDiv = document.createElement('div');
   keyboardDiv.id = 'keyboard';
@@ -199,12 +226,12 @@ function keyboardRender() {
     const rowElem = document.createElement('div');
     rowElem.classList.add('row');
     keyboardDiv.appendChild(rowElem);
-    row.forEach((cell, i) => {
+    row.forEach((cell) => {
       const keyboardButton = document.createElement('button');
       keyboardButton.innerText = cell.initial;
       keyboardButton.id = cell.id
         ? cell.id
-        : `key-${cell.initial.toLowerCase()}`;
+        : cell.initial.toLowerCase();
       rowElem.appendChild(keyboardButton);
       if (cell.className) {
         keyboardButton.classList.add(cell.className);
@@ -214,41 +241,7 @@ function keyboardRender() {
   return keyboardDiv;
 }
 
-document.addEventListener('keydown', (event) => {
-  if (event.code === 'AltLeft' && (event.ctrlKey || event.metaKey)) {
-    lang = 'en';
-  }});
-
-function instructionRender() {
-  const optionDiv = document.createElement('div');
-  document.body.append(optionDiv);
-  optionDiv.innerHTML = 'Клавиатура создана в операц ионной системе Windows \n Для переключения языка комбинация: левыe Ctrl + Alt';
-  return optionDiv;
-}
-
-function setupClickEvents(keyboardDiv, textArea) {
-  keyboardDiv.addEventListener('click', (event) => {
-    console.log('click', event);
-    console.log('shift is active', event.shiftKey);
-    const cursorPosition = textArea.selectionStart;
-    keyboardLayout[lang].forEach((row) => {
-      row.forEach((cell) => {
-        if (cell.initial === event.target.innerText) {
-          textArea.value = calcTextArea(
-            textArea.value,
-            cursorPosition,
-            cell.action,
-            cell.initial,
-          );
-          console.log('textAreavalue', textArea.value);
-        }
-      });
-    });
-  });
-}
-
 document.addEventListener('mousedown', (e) => {
-  console.log(e.target.tagName);
   if (e.target.tagName === 'BUTTON') {
     e.target.classList.add('active');
   }
@@ -261,17 +254,31 @@ let shiftWasPressed = false;
 document.addEventListener('keydown', (event) => {
   if (event.shiftKey) {
     keyboardLayout[lang].forEach((row) => {
-      row.forEach((cell, i) => {
-        const elem = document.getElementById(
-          cell.id ? cell.id : `key-${cell.initial.toLowerCase()}`,
-        );
+      row.forEach((cell) => {
+        const elem = document.getElementById(cell.initial.toLowerCase());
         if (cell.shift) {
           elem.innerHTML = cell.shift;
           shiftWasPressed = true;
-        }
-        else if (!cell.action) {
+        } else if (!cell.action) {
           elem.innerHTML = cell.initial.toUpperCase();
         }
+      });
+    });
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  const keyboardDiv = document.getElementById('keyboard');
+  const rows = keyboardDiv.children;
+  if (event.code === 'AltLeft' && (event.ctrlKey || event.metaKey)) {
+    lang = lang === 'en' ? 'ru' : 'en';
+    localStorage.setItem('lang', lang);
+    keyboardLayout[lang].forEach((row, i) => {
+      const currentRowEl = rows[i];
+      row.forEach((cell, j) => {
+        const currentEl = currentRowEl.children[j];
+        currentEl.innerText = cell.initial;
+        currentEl.id = cell.initial;
       });
     });
   }
@@ -280,9 +287,9 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keyup', (event) => {
   if (!event.shiftKey && shiftWasPressed) {
     keyboardLayout[lang].forEach((row) => {
-      row.forEach((cell, i) => {
+      row.forEach((cell) => {
         const elem = document.getElementById(
-          cell.id ? cell.id : `key-${cell.initial.toLowerCase()}`,
+          cell.id ? cell.id : cell.initial.toLowerCase(),
         );
         if (cell.shift) {
           elem.innerHTML = cell.initial;
@@ -295,45 +302,61 @@ document.addEventListener('keyup', (event) => {
   }
 });
 
-
 document.body.addEventListener('keydown', (e) => {
-  console.log('e.keyCode', e.code);
   const { key } = e;
-  const el = document.getElementById(`key-${key.toLowerCase()}`);
-  console.log('keydown', el);
+  const el = document.getElementById(key.toLowerCase());
   el.classList.add('active');
 });
 
 document.addEventListener('keyup', (e) => {
   const { key } = e;
-  console.log('keydSDASDASDown', key);
-  const el = document.getElementById(`key-${key.toLowerCase()}`);
-  console.log('keydown', el);
+  const el = document.getElementById(key.toLowerCase());
   el.classList.remove('active');
 });
 
 let capsWasPressed = false;
-document.addEventListener('keypress', (event) => {
-  if (event.code === 20) {
-    capsWasPressed = true;
+document.addEventListener('keydown', (event) => {
+  if (event.code === 'CapsLock') {
+    if (capsWasPressed === false) {
+      capsWasPressed = true;
+    } else {
+      capsWasPressed = false;
+    }
     keyboardLayout[lang].forEach((row) => {
-      row.forEach((cell, i) => {
-        const elem = document.getElementById(
-          cell.id ? cell.id : `key-${cell.initial.toLowerCase()}`,
-        );
-        if (!cell.shift && !cell.action) {
-          elem.innerHTML = cell.initial.toUpperCase();
+      row.forEach((cell) => {
+        const elem = document.getElementById(cell.initial.toLowerCase());
+        if (capsWasPressed === true) {
+          if (!cell.shift && !cell.action) {
+            elem.innerHTML = cell.initial.toUpperCase();
+          }
+        } else if (!cell.shift && !cell.action) {
+          elem.innerHTML = cell.initial.toLowerCase();
         }
       });
     });
   }
 });
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  const textArea = textAreaRender();
-  const keyboardDiv = keyboardRender('initial');
-  instructionRender();
-  setupClickEvents(keyboardDiv, textArea);
+document.addEventListener('click', (event) => {
+  if (event.target.id === 'capslock') {
+    if (capsWasPressed === false) {
+      capsWasPressed = true;
+    } else {
+      capsWasPressed = false;
+    }
+    keyboardLayout[lang].forEach((row) => {
+      row.forEach((cell) => {
+        const elem = document.getElementById(cell.initial.toLowerCase());
+        if (capsWasPressed === true) {
+          if (!cell.shift && !cell.action) {
+            elem.innerHTML = cell.initial.toUpperCase();
+          }
+        } else if (!cell.shift && !cell.action) {
+          elem.innerHTML = cell.initial.toLowerCase();
+        }
+      });
+    });
+  }
 });
 
 const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
@@ -375,7 +398,38 @@ const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
       return currTextAreaVal;
     }
     case 'SHIFT': {
-      return currTextAreaVal;
+      document.addEventListener('mousedown', (event) => {
+        if (event.target.id === 'shift') {
+          keyboardLayout[lang].forEach((row) => {
+            row.forEach((cell) => {
+              const elem = document.getElementById(cell.initial.toLowerCase());
+              if (cell.shift) {
+                elem.innerHTML = cell.shift;
+                shiftWasPressed = true;
+              } else if (!cell.action) {
+                elem.innerHTML = cell.initial.toUpperCase();
+              }
+            });
+          });
+        }
+      });
+      document.addEventListener('mouseup', (event) => {
+        if (!event.shiftKey && shiftWasPressed) {
+          keyboardLayout[lang].forEach((row) => {
+            row.forEach((cell) => {
+              const elem = document.getElementById(
+                cell.id ? cell.id : cell.initial.toLowerCase(),
+              );
+              if (cell.shift) {
+                elem.innerHTML = cell.initial;
+                shiftWasPressed = false;
+              } else {
+                elem.innerHTML = cell.initial;
+              }
+            });
+          });
+        }
+      });
     }
     case 'CTRL': {
       return currTextAreaVal;
@@ -384,16 +438,6 @@ const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
       return currTextAreaVal;
     }
     case 'ALT': {
-      return currTextAreaVal;
-    }
-    case 'LEFT': {
-      textArea.selectionEnd = cursorPosition - 1;
-      textArea.focus();
-      return currTextAreaVal;
-    }
-    case 'RIGHT': {
-      textArea.selectionStart = cursorPosition + 1;
-      textArea.focus();
       return currTextAreaVal;
     }
     case 'ENTER': {
@@ -412,3 +456,31 @@ const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
     }
   }
 };
+
+function setupClickEvents(keyboardDiv, textArea) {
+  keyboardDiv.addEventListener('click', (event) => {
+    const cursorPosition = textArea.selectionStart;
+    keyboardLayout[lang].forEach((row) => {
+      row.forEach((cell) => {
+        if (cell.initial === event.target.innerText.toLowerCase()
+        || cell.shift === event.target.innerText.toLowerCase()) {
+          textArea.value = calcTextArea(
+            textArea.value,
+            cursorPosition,
+            cell.action,
+            event.target.innerText,
+          );
+          textArea.selectionStart = cursorPosition;
+        }
+      });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const textArea = textAreaRender();
+  const keyboardDiv = keyboardRender('initial');
+  instructionRender();
+  setupClickEvents(keyboardDiv, textArea);
+  textArea.focus();
+});
