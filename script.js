@@ -444,7 +444,7 @@ const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
           });
         }
       });
-      return true;
+      return currTextAreaVal;
     }
     case 'CTRL': {
       return currTextAreaVal;
