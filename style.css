@@ -97,7 +97,7 @@ button:hover {
   cursor: pointer;
 }
 .buttonSpace {
-  width: 280px;
+  width: 275px;
   height: 40px;
   background-color: #72a595;
   border-color: #72a595;
@@ -135,6 +135,7 @@ background-color: #ed4956;
   border-color: #72a595;
   border-radius: 50px;
   transition: 0.3s;
+  margin: 0px 0px 0px 10px;
 }
 .buttonSpecialTwo {
   text-transform: capitalize;
@@ -173,4 +174,8 @@ div#keyboard {
   padding: 5px 5px 0px 10px;
   border: 3px solid #72a595;
   border-radius: 35px;
+}
+p{
+  max-width: 600px;
+  text-align: center;
 }
