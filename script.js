@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-fallthrough */
 const keyboardLayout = {
   en: [
     [
@@ -446,6 +444,7 @@ const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
           });
         }
       });
+      return true;
     }
     case 'CTRL': {
       return currTextAreaVal;
@@ -473,7 +472,8 @@ const calcTextArea = (currTextAreaVal, cursorPosition, action, char) => {
   }
 };
 
-function setupClickEvents(keyboardDiv, textArea) {
+function setupClickEvents(keyboardDiv) {
+  const textArea = document.getElementById('textArea');
   keyboardDiv.addEventListener('click', (event) => {
     const cursorPosition = textArea.selectionStart;
     keyboardLayout[lang].forEach((row) => {
