@@ -171,7 +171,9 @@ const keyboardLayout = {
       { initial: 'б' },
       { initial: 'ю' },
       { initial: '.', shift: ',' },
-      { initial: '↑', action: 'UP', className: 'buttonTurns', id: 'arrowup'},
+      {
+        initial: '↑', action: 'UP', className: 'buttonTurns', id: 'arrowup',
+      },
       { initial: 'like', className: 'buttonLike', id: 'like' },
     ],
     [
