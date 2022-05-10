@@ -311,14 +311,18 @@ document.body.addEventListener('keydown', (e) => {
   const { key, code } = e;
   const id = key === ' ' ? code : key;
   const el = document.getElementById(id.toLowerCase());
-  el.classList.add('active');
+  if (el) {
+    el.classList.add('active');
+  }
 });
 
 document.addEventListener('keyup', (e) => {
   const { key, code } = e;
   const id = key === ' ' ? code : key;
   const el = document.getElementById(id.toLowerCase());
-  el.classList.remove('active');
+  if (el) {
+    el.classList.remove('active');
+  }
 });
 
 let capsWasPressed = false;
@@ -368,7 +372,9 @@ document.addEventListener('click', (event) => {
 
 document.addEventListener('keydown', (event) => {
   if (event.code === 'Tab') {
+    event.preventDefault();
     const textArea = document.querySelector('textarea');
+    textArea.value += '\t';
     textArea.focus();
   }
 });
