@@ -1,0 +1,181 @@
+/* ОБНУЛЕНИЕ */
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 15;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+h1[class],
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+}
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* ============================= КОНЕЦ ОБНУЛЕНИЯ =================================================================================================================================================  */
+body {
+  background-color: #bfceb1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  width: 40px;
+  height: 40px;
+  color: #72a595;
+  background-color: #e8d9ae;
+  border-color: #e8d9ae;
+  border-radius: 50px;
+  transition: 0.1s;
+  margin: 0px 5px 5px 0px;
+  font-weight: 600;
+}
+button:hover {
+  cursor: pointer;
+}
+.buttonSpace {
+  width: 275px;
+  height: 40px;
+  background-color: #72a595;
+  border-color: #72a595;
+  border-radius: 50px;
+  transition: 0.1s;
+  padding: 0px 0px 13px 0px;
+}
+
+.buttonLike{
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  margin: 0px 0px 0px 40px;
+  border-radius: 50px;
+}
+.buttonLike.active{
+background-color: #ed4956;
+}
+
+.buttonSpecial {
+  text-transform: capitalize;
+  width: 80px;
+  height: 40px;
+  background-color: #72a595;
+  color: #e8d9ae;
+  border-color: #72a595;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.buttonTurns {
+  width: 50px;
+  height: 40px;
+  background-color: #72a595;
+  color: #e8d9ae;
+  border-color: #72a595;
+  border-radius: 50px;
+  transition: 0.3s;
+  margin: 0px 0px 0px 10px;
+}
+.buttonSpecialTwo {
+  text-transform: capitalize;
+  width: 60px;
+  height: 40px;
+  background-color: #72a595;
+  color: #e8d9ae;
+  border-color: #72a595;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+.buttonEnterAndDelete {
+  text-transform: capitalize;
+  width: 145px;
+  height: 40px;
+  background-color: #72a595;
+  color: #e8d9ae;
+  border-color: #72a595;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.active {
+  height: 37px;
+  border-color: #7fcfbd;
+  background-color: #7fcfbd;
+  color: black;
+  transition: 0.2s;
+}
+textarea {
+  width: 500px;
+}
+
+div#keyboard {
+  margin: 20px 0px 20px 0px;
+  padding: 5px 5px 0px 10px;
+  border: 3px solid #72a595;
+  border-radius: 35px;
+}
+p{
+  max-width: 600px;
+  text-align: center;
+}
